@@ -1,32 +1,43 @@
-# React + TypeScript + Vite
+# BLEACH — BEYOND THE BLADE
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A production-quality, cinematic web experience inspired by the **BLEACH** anime and manga universe created by Tite Kubo.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dark Cinematic Visual Direction**: Deep black (`#050505`), charcoal (`#111111`), bone white (`#F2F0EA`), blood red (`#D71920`), and subtle spiritual blue accents. Incorporates manga panel compositions, film grain texture, and Japanese typography.
+- **Cinematic Prologue**: Featuring Kubo's iconic Volume 5 quote with an instant "Skip Intro" option.
+- **Full-Screen Hero**: Monumental typography (*"THE EDGE OF DESTINY"*), layered 3D parallax on desktop, and spiritual reishi energy.
+- **Interactive 3D Zanpakuto**: Built with Three.js (lazy-loaded for high performance) allowing full 360° inspection of Zangetsu and Tensa Zangetsu with steel blade, tsuka wrapping, pommel chain, and swirling reishi particles.
+- **Procedural Sound Engine**: Real-time atmospheric drone, metallic katana unsheath (*"SHIIIING!"*), and Bankai roar synthesized directly via the Web Audio API with zero external audio assets needed.
+- **Section A — The Awakening**: Dark-to-light transition, Zangetsu oversized cleaver silhouette, and an interactive *"Channel Reiatsu"* pulse.
+- **Section B — Soul Reaper**: Substitute Shinigami dossier, rotating Shinigami Badge emblem (死神代行証), and combat stat radar (Reiatsu, Zanjutsu, Hoho, Kido).
+- **Section C — Bankai (The Visual Climax)**: Environmental shift into crimson reiatsu, interactive *"Release Bankai"* trigger with screen-shake, sound synthesis, and Tensa Zangetsu transformation.
+- **Section D — The Rivalry**: Dedicated character showcases for Rukia Kuchiki (*Sode no Shirayuki*), Byakuya Kuchiki (*Senbonzakura*), and Sosuke Aizen (*Kyoka Suigetsu*), with unique accent colors, release commands, and combat metrics.
+- **Section E — The Universe**: Multi-dimensional exploration of Soul Society (Seireitei), Hueco Mundo (Las Noches quartz desert), and the World of the Living (Karakura Town).
+- **Section F — Final CTA**: Dramatic sword composition (*"YOUR SOUL. YOUR BLADE. YOUR DESTINY."*) with a working *"Ascend to the Beginning"* smooth scroll.
+- **Performance & Accessibility**: 60 FPS particle engine with automatic mobile optimization, code-split 3D chunks, keyboard accessibility, and respect for `prefers-reduced-motion`.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Install dependencies
+npm install
 
-## Expanding the Oxlint configuration
+# Start local development server
+npm run dev
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+# Build production bundle
+npm run build
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Preview production build
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Tech Stack
+
+- **Framework**: React 19 + TypeScript + Vite
+- **Styling**: Tailwind CSS v4 + Custom Bleach Design System
+- **Animation**: GSAP + ScrollTrigger + RequestAnimationFrame
+- **3D Graphics**: Three.js (code-split)
+- **Audio**: Web Audio API (procedural synthesis)
+- **Icons**: Lucide React
