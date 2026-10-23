@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-black: #050505;
+    --bg-charcoal: #0e0e11;
+    --color-bone: #F2F0EA;
+    --color-red: #D71920;
+    --color-crimson: #8B0000;
+    --color-spiritual-blue: #00e5ff;
+    --font-heading: 'Cinzel', serif;
+    --font-decorative: 'Cinzel Decorative', serif;
+    --font-kanji: 'Shippori Mincho', 'Noto Serif JP', serif;
+    --font-body: 'Space Grotesk', sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-black);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography & Utility Classes */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-kanji {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+}
+
+.font-sans-editorial {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D71920;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2d37;
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Manga border / frame details */
+.manga-panel {
+  position: relative;
+  border: 1px solid rgba(242, 240, 234, 0.12);
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.7) 0%, rgba(5, 5, 5, 0.9) 100%);
+  backdrop-filter: blur(12px);
+}
+
+.manga-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #D71920;
+  border-left: 2px solid #D71920;
+  pointer-events: none;
+}
+
+.manga-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #D71920;
+  border-right: 2px solid #D71920;
+  pointer-events: none;
+}
+
+/* Atmospheric Glows & Animations */
+@keyframes reiatsuPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(215, 25, 32, 0.25), inset 0 0 15px rgba(215, 25, 32, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(215, 25, 32, 0.55), inset 0 0 30px rgba(215, 25, 32, 0.35);
+  }
+}
+
+.pulse-reiatsu {
+  animation: reiatsuPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+/* Vertical Japanese Text */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.35em;
+}
+
+/* Text glow filters */
+.glow-text-red {
+  text-shadow: 0 0 20px rgba(215, 25, 32, 0.7), 0 0 40px rgba(215, 25, 32, 0.3);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
+}
+
+/* Custom button hover sheen */
+.btn-blade {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-blade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-blade:hover::before {
+  left: 120%;
+}

@@ -1,0 +1,55 @@
+import type { Realm } from '../types';
+
+export const realms: Realm[] = [
+  {
+    id: 'soul-society',
+    name: 'Soul Society',
+    japaneseName: '尸魂界 (ソウル・ソサエティ)',
+    category: 'The Spiritual Realm',
+    description: 'The afterlife realm where souls reside alongside the Shinigami. Divided into the elite walled citadel of Seireitei, home of the Gotei 13 court guards, and the 320 districts of Rukongai.',
+    atmosphere: 'Ancient stone citadels, flowing spirit ribbons, cherry blossom gardens, and profound traditional spiritual discipline.',
+    governingForce: 'Central 46 & Gotei 13 Court Guard Squads',
+    image: '/assets/realm-soul-society.jpg',
+    spiritualDensity: 'Extremely High (Reishi Rich)',
+    landmarks: [
+      'Seireitei Citadel (瀞霊廷)',
+      'Sokyoku Hill (双殛の丘)',
+      'Royal Realm Pillar (霊王宮直通)',
+      'Rukongai Outskirts (流魂街)',
+    ],
+  },
+  {
+    id: 'hueco-mundo',
+    name: 'Hueco Mundo',
+    japaneseName: '虚圏 (ウェコムンド)',
+    category: 'The Hollow Realm',
+    description: 'An endless barren desert between the human world and Soul Society. An eternal pitch-black night where spiritual white quartz dunes stretch endlessly under an inverted moon.',
+    atmosphere: 'Haunting silence, desolate white sands, petrified quartz trees, and predatory spiritual pressure.',
+    governingForce: 'Sosuke Aizen & The Ten Espada',
+    image: '/assets/realm-hueco-mundo.jpg',
+    spiritualDensity: 'Concentrated Negative Reishi',
+    landmarks: [
+      'Las Noches Fortress (虚夜宮)',
+      'Menos Forest (メノスの森)',
+      'The Endless Quartz Desert',
+      'The White Void Canopy',
+    ],
+  },
+  {
+    id: 'world-of-living',
+    name: 'World of the Living',
+    japaneseName: '現世 (Karakura Town)',
+    category: 'The Mortal Plane',
+    description: 'The physical human world. Karakura Town is a geographical focal point with exceptionally high spirit concentration (Jureichi), making it the primary target for Hollows and supernatural convergence.',
+    atmosphere: 'Modern twilight suburban streets, power lines against crimson skies, neon signs, and thin spiritual barriers.',
+    governingForce: 'Substitute Soul Reaper & Urahara Shop',
+    image: '/assets/realm-karakura.jpg',
+    spiritualDensity: 'Fluctuating / High Concentration (Jureichi)',
+    landmarks: [
+      'Kurosaki Clinic (黒崎医院)',
+      'Urahara Shop Underground Training Ground',
+      'Karakura High School & River Bank',
+      'Mashiba Park Bridge',
+    ],
+  },
+];
