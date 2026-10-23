@@ -11,7 +11,7 @@ export const FinalCtaSection: React.FC = () => {
   return (
     <section
       id="destiny"
-      className="relative min-h-[90vh] w-full flex flex-col justify-between pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#050505] via-[#090505] to-[#020202] border-t border-white/[0.08] overflow-hidden"
+      className="relative min-h-[90vh] w-full flex flex-col justify-between pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-white/[0.06] overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#D71920]/10 rounded-full blur-[180px] pointer-events-none" />

@@ -210,6 +210,73 @@ class SoundEngine {
       // ignore
     }
   }
+
+  // Hyorinmaru Spirit Dragon Roar
+  public playDragonRoar() {
+    if (this.isMuted) return;
+    try {
+      this.initContext();
+      if (!this.ctx) return;
+
+      const now = this.ctx.currentTime;
+
+      // 1. Guttural sub-frequency growl
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(85, now);
+      osc.frequency.exponentialRampToValueAtTime(45, now + 0.6);
+      osc.frequency.exponentialRampToValueAtTime(110, now + 1.2);
+
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(350, now);
+      filter.frequency.exponentialRampToValueAtTime(900, now + 0.4);
+      filter.frequency.exponentialRampToValueAtTime(180, now + 1.3);
+
+      gain.gain.setValueAtTime(0.01, now);
+      gain.gain.linearRampToValueAtTime(0.28, now + 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 1.4);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 1.4);
+
+      // 2. Wind whoosh / Reiatsu breath
+      const bufferSize = Math.floor(this.ctx.sampleRate * 1.2);
+      const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+      const noise = this.ctx.createBufferSource();
+      noise.buffer = noiseBuffer;
+
+      const noiseFilter = this.ctx.createBiquadFilter();
+      noiseFilter.type = 'bandpass';
+      noiseFilter.frequency.setValueAtTime(400, now);
+      noiseFilter.frequency.exponentialRampToValueAtTime(1200, now + 0.35);
+      noiseFilter.frequency.exponentialRampToValueAtTime(250, now + 1.2);
+      noiseFilter.Q.setValueAtTime(4, now);
+
+      const noiseGain = this.ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.01, now);
+      noiseGain.gain.linearRampToValueAtTime(0.18, now + 0.1);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+
+      noise.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(this.ctx.destination);
+
+      noise.start(now);
+      noise.stop(now + 1.2);
+    } catch {
+      // ignore
+    }
+  }
 }
 
 export const sound = new SoundEngine();

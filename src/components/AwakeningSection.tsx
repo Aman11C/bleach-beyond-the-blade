@@ -14,7 +14,7 @@ export const AwakeningSection: React.FC = () => {
   return (
     <section
       id="awakening"
-      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0c] to-[#050505]"
+      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent border-t border-b border-white/[0.06]"
     >
       {/* Background Red Energy Pulse */}
       <div

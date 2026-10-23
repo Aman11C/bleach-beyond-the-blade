@@ -14,7 +14,7 @@ export const SoulReaperSection: React.FC = () => {
   return (
     <section
       id="soul-reaper"
-      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-t border-b border-white/[0.08] overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-b border-white/[0.06] overflow-hidden"
     >
       {/* Huge Background Typography */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.03] text-center w-full overflow-hidden">

@@ -27,8 +27,8 @@ export const BankaiSection: React.FC<BankaiSectionProps> = ({ isBankaiActive, on
       id="bankai"
       className={`relative min-h-screen w-full flex items-center justify-center py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-1000 overflow-hidden ${
         isBankaiActive
-          ? 'bg-gradient-to-b from-[#020202] via-[#1a0507] to-[#020202]'
-          : 'bg-[#050505]'
+          ? 'bg-[#1a0507]/25 border-t border-b border-[#D71920]/30'
+          : 'bg-transparent border-t border-b border-white/[0.06]'
       } ${isShaking ? 'animate-pulse' : ''}`}
     >
       {/* Background Bankai Kanji Watermark */}

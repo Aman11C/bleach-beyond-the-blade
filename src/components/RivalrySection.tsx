@@ -19,7 +19,7 @@ export const RivalrySection: React.FC = () => {
   return (
     <section
       id="rivalry"
-      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#050505] via-[#09090b] to-[#050505] overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-b border-white/[0.06] overflow-hidden"
     >
       {/* Dynamic Background Glow matching character accent */}
       <div

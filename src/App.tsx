@@ -15,6 +15,10 @@ import { ScrollProgress } from './components/ScrollProgress';
 import { Cursor } from './components/Cursor';
 import { CinematicIntro } from './components/CinematicIntro';
 
+const DragonCanvas3D = React.lazy(() =>
+  import('./components/DragonCanvas3D').then((m) => ({ default: m.DragonCanvas3D }))
+);
+
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,6 +86,11 @@ export const App: React.FC = () => {
       {/* Global Reiatsu Spirit Particles Canvas */}
       <ReiatsuCanvas isBankaiActive={isBankaiActive} />
 
+      {/* Global 3D Serpentine Spirit Dragon (Hyorinmaru / Daiguren Bankai) with Touch Control */}
+      <React.Suspense fallback={null}>
+        <DragonCanvas3D isBankaiActive={isBankaiActive} />
+      </React.Suspense>
+
       {/* Scroll Progress Bar & Milestones */}
       <ScrollProgress />
 
@@ -102,7 +111,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Sections */}
-      <main className="relative z-20 flex flex-col w-full overflow-x-hidden">
+      <main className="relative z-10 flex flex-col w-full overflow-x-hidden">
         {/* Hero Section */}
         <Hero onEnter={handleEnterStory} />
 
